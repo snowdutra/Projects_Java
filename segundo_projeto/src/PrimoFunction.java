@@ -22,7 +22,7 @@ public class PrimoFunction {
             }
             if (cont % 2 != 0 ){
                 primo = verificar(cont);
-                
+                 
                 if(primo){
                     System.out.print(cont + " ");
                 }
