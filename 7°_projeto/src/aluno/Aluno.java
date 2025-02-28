@@ -3,7 +3,7 @@ package aluno;
 import java.util.ArrayList;
 
 public class Aluno {
-   // atributos ou variáveis de instância
+    // atributos ou variáveis de instância
     private int ra;
     private String nome;
     private ArrayList<String> listaDisciplina; // o <String> é o tipo de dado que a lista vai armazenar
@@ -23,7 +23,7 @@ public class Aluno {
 
     // método para receber o nome de uma disciplina e a  média do aluno. inserir a média associada a disciplina na listaMedia
     public void registrarMedia(String disciplina, Double media){
-        int index = listaMedia.indexOf(disciplina);
+        int index = listaDisciplina.indexOf(disciplina);
         listaMedia.add(index, media);
     }
 
@@ -34,5 +34,9 @@ public class Aluno {
             media += nota;
         }
         return media / listaMedia.size();
+    }
+
+    public String getNome() {
+        return this.nome;
     }
 }
