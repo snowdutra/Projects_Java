@@ -2,22 +2,22 @@ public class Lista {
     No inicio;
     No fim;
 
-    // inserir um elemento no final da lista
-    public void insere(String dado) {
+    public void inserir(String dado) {
         No aux = new No(dado);
         if (inicio == null) {
-            fim = inicio = aux;
+            inicio = fim = aux;
         } else {
             fim.prox = aux;
+            fim = aux;
+        }
+    }
+
+    public void imprimir() {
+        No aux = inicio;
+        while (aux != null) {
+            System.out.println(aux.dado);
+            aux = aux.prox;
         }
     }
 }
 
-// método para imprimir a lista
-public void imprimir() {
-    No aux = inicio;
-    while (aux != null) {
-        System.out.println(aux.dado);
-        aux = aux.prox;
-    }
-}
