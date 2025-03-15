@@ -1,49 +1,23 @@
-import javax.swing.JOptionPane;
-import java.util.ArrayList;
-
 public class App {
     public static void main(String[] args) {
-        ArrayList<Aluno> listaAluno = new ArrayList<>();
+        // Criação de um aluno
+        Aluno aluno = new Aluno(123456, "João Silva");
 
-        while (true) {
-            String opcao = JOptionPane.showInputDialog(
-                "1 - Cadastrar aluno\n2 - Matricular aluno\n3 - Cadastrar média\n4 - Sair"
-            );
-            int opcaoEscolhida = Integer.parseInt(opcao);
+        // Matriculando o aluno em disciplinas
+        aluno.matricular("Matemática");
+        aluno.matricular("Português");        
+        aluno.matricular("História");
 
-            switch (opcaoEscolhida) {
-                case 1:
-                    int ra = Integer.parseInt(JOptionPane.showInputDialog("RA"));
-                    String nome = JOptionPane.showInputDialog("Nome");
-                    listaAluno.add(new Aluno(ra, nome));
-                    break;
-                case 2:
-                    int raMatricula = Integer.parseInt(JOptionPane.showInputDialog("RA do aluno"));
-                    String disciplina = JOptionPane.showInputDialog("Disciplina");
-                    for (Aluno aluno : listaAluno) {
-                        if (aluno.getRa() == raMatricula) {
-                            aluno.matricular(disciplina);
-                            break;
-                        }
-                    }
-                    break;
-                case 3:
-                    int raMedia = Integer.parseInt(JOptionPane.showInputDialog("RA do aluno"));
-                    String disciplinaMedia = JOptionPane.showInputDialog("Disciplina");
-                    double media = Double.parseDouble(JOptionPane.showInputDialog("Média"));
-                    for (Aluno aluno : listaAluno) {
-                        if (aluno.getRa() == raMedia) {
-                            aluno.registrarMedia(disciplinaMedia, media);
-                            break;
-                        }
-                    }
-                    break;
-                case 4:
-                    System.exit(0);
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Opção inválida");
-            }
-        }
+        // Definindo as médias para as disciplinas
+        aluno.setMedia("Matemática", 7.5);
+        aluno.setMedia("Português", 8.0);
+        aluno.setMedia("História", 9.0);
+
+        // Exibindo as informações do aluno
+        System.out.println("RA: " + aluno.getRA());
+        System.out.println("Nome: " + aluno.getNome());
+        System.out.println("Disciplinas: " + aluno.getListaDisciplinas());
+        System.out.println("Médias: " + aluno.getListaMedias());
+        System.out.println("Média Geral: " + aluno.getMediaGeral());
     }
 }
