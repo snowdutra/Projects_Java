@@ -1,44 +1,4 @@
-<<<<<<< HEAD
-packpage aluno;
-=======
-package aluno;
->>>>>>> 7bb1ccd548a7b9a0b80b11bb74d47d1dddc4024f
 
-<<<<<<< HEAD
-import java.util.ArrayList;
-
-public class Aluno {
-   
-    // atributos ou variáveis de instância
-    private int ra;
-    private String nome;
-    private ArrayList<String> listaDisciplina;
-    private ArrayList<Double> listaMedia;
-
-    // construtor
-    public Aluno(int ra, String nome) {
-        this.ra = ra;
-        this.nome = nome;
-        this.listaDisciplina = new ArrayList<String>();
-        this.listaMedia = new ArrayList<Double>();
-    }
-
-    // métodos para receber o nome de uma disciplina e armazenar na lista
-
-    public void setDisciplina(String disciplina) {
-        this.listaDisciplina.add(disciplina);
-    }
-
-    // métodos para receber o nome de uma disciplina e a média da mesma.
-    // inserir a média associada a disciplina
-
-
-
-    // método para calcular a retornar a média geral do aluno
-
-
-}
-=======
 import java.util.ArrayList;
 
 public class Aluno {
@@ -81,5 +41,3 @@ public class Aluno {
     }
 
 }
-
->>>>>>> 7bb1ccd548a7b9a0b80b11bb74d47d1dddc4024f
