@@ -1,20 +1,49 @@
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args) {
-        // Criação de um aluno
-        Aluno aluno = new Aluno(12345, "João Silva");
+        ArrayList<Aluno> listaAluno = new ArrayList<>();
 
-        // Matriculando o aluno em disciplinas
-        aluno.matricular("Matemática");
-        aluno.matricular("Português");
-        aluno.matricular("História");
+        while (true) {
+            String opcao = JOptionPane.showInputDialog(
+                "1 - Cadastrar aluno\n2 - Matricular aluno\n3 - Cadastrar média\n4 - Sair"
+            );
+            int opcaoEscolhida = Integer.parseInt(opcao);
 
-        // Registrando médias das disciplinas
-        aluno.setMedia("Matemática", 8.5);
-        aluno.setMedia("Português", 7.0);
-        aluno.setMedia("História", 9.0);
-
-        // Calculando a média geral do aluno        
-        double mediaGeral = aluno.getMediaGeral();
-        System.out.println("Média geral do aluno: " + mediaGeral);
+            switch (opcaoEscolhida) {
+                case 1:
+                    int ra = Integer.parseInt(JOptionPane.showInputDialog("RA"));
+                    String nome = JOptionPane.showInputDialog("Nome");
+                    listaAluno.add(new Aluno(ra, nome));
+                    break;
+                case 2:
+                    int raMatricula = Integer.parseInt(JOptionPane.showInputDialog("RA do aluno"));
+                    String disciplina = JOptionPane.showInputDialog("Disciplina");
+                    for (Aluno aluno : listaAluno) {
+                        if (aluno.getRa() == raMatricula) {
+                            aluno.matricular(disciplina);
+                            break;
+                        }
+                    }
+                    break;
+                case 3:
+                    int raMedia = Integer.parseInt(JOptionPane.showInputDialog("RA do aluno"));
+                    String disciplinaMedia = JOptionPane.showInputDialog("Disciplina");
+                    double media = Double.parseDouble(JOptionPane.showInputDialog("Média"));
+                    for (Aluno aluno : listaAluno) {
+                        if (aluno.getRa() == raMedia) {
+                            aluno.registrarMedia(disciplinaMedia, media);
+                            break;
+                        }
+                    }
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
+            }
+        }
     }
 }
