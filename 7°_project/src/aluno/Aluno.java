@@ -23,18 +23,18 @@ public class Aluno {
 
     // método para receber o nome de uma disciplina e a média da mesma.
     // inserir a média associada a disciplina
-    public void registrarMedia(String disciplina, Double media) {
+    public void registrarMedia(String disciplina, double media) {
         int index = listaDisciplina.indexOf(disciplina);
         listaMedia.add(index, media);
     }
 
     // método para calcular e retornar a média geral do aluno
     public double calcularMediaGeral() {
-        double media = 0.0;
-        for(Double nota : listaMedia) {
-            media += nota;
+        double soma = 0.0;
+        for (double nota : listaMedia) {
+            soma += nota;
         }
-        return media / listaMedia.size();
+        return soma / listaMedia.size();
     }
 
     public int getRa() {
@@ -55,9 +55,9 @@ public class Aluno {
 
     @Override
     public String toString() {
-        String aux = "";
-        aux += "RA: " + ra + "\n";
-        aux += "Nome: " + nome;
-        return aux;
+        StringBuilder aux = new StringBuilder();
+        aux.append("RA: ").append(ra).append("\n");
+        aux.append("Nome: ").append(nome);
+        return aux.toString();
     }
 }
