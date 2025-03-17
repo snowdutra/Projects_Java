@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "06_project/src",
+        "05_project/src",
+        "04_project/src",
+        "03_project/src",
+        "02_project/src",
+        "01_project/src",
+        "07_project/src/aluno"
+    ]
+}
