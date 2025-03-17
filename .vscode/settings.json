@@ -1,12 +1,13 @@
 {
     "java.project.sourcePaths": [
+        "07_project/src/aluno",
         "06_project/src",
         "05_project/src",
         "04_project/src",
         "03_project/src",
         "02_project/src",
         "01_project/src",
-        "07_project/src/aluno"
+        "10_project/src"
     ],
     "java.debug.settings.onBuildFailureProceed": true
 }
