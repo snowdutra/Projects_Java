@@ -7,5 +7,6 @@
         "02_project/src",
         "01_project/src",
         "07_project/src/aluno"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

@@ -1,5 +1,4 @@
-package aluno; // Adicionado o pacote para corresponder à estrutura do projeto
-
+import aluno.Aluno;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;

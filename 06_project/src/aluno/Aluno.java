@@ -1,3 +1,5 @@
+package aluno;
+
 import java.util.ArrayList;
 
 public class Aluno {
@@ -16,19 +18,17 @@ public class Aluno {
 
     public void matricular(String disciplina) {
         listaDisciplina.add(disciplina);
-        listaMedia.add(0.0); // Inicializa a média com 0.0
+        listaMedia.add(0.0);
     }
 
     public void registrarMedia(String disciplina, double media) {
         int index = listaDisciplina.indexOf(disciplina);
         if (index != -1) {
             listaMedia.set(index, media);
-        } else {
-            throw new IllegalArgumentException("Disciplina não encontrada: " + disciplina);
         }
     }
 
-    public double getMediaGeral() {
+    public double calcularMediaGeral() {
         if (listaMedia.isEmpty()) return 0.0;
 
         double soma = 0.0;
@@ -38,7 +38,7 @@ public class Aluno {
         return soma / listaMedia.size();
     }
 
-    public int getRA() {
+    public int getRa() {
         return ra;
     }
 

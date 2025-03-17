@@ -1,5 +1,3 @@
-package aluno; // Adicionado o pacote para corresponder à estrutura do projeto
-
 /**
  * Classe principal para executar o programa.
  */
