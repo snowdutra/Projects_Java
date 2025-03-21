@@ -1,12 +1,10 @@
-public class No<T>{
+public class No<T> {
     private T dado;
     private No<T> anterior;
     private No<T> proximo;
 
     public No(T dado) {
         this.dado = dado;
-        this.anterior = null;
-        this.proximo = null;
     }
 
     public T getDado() {

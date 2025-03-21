@@ -9,22 +9,21 @@ public class ListaDupla<T> {
         this.tamanho = 0;
     }
 
-
-// método para inserir um nó no final da lista 
+    // método para inserir um nó no final da lista 
     public void inserir(T dado) {
         No<T> aux = new No<>(dado);
         if (estaVazia()) {
             inicio = aux;
-        }   
-        else {
-            aux.setProximo(fim);
-            fim.setAnterior(aux);
+            fim = aux;
+        } else {
+            aux.setAnterior(fim);
+            fim.setProximo(aux);
+            fim = aux;
         }
-        fim = aux;
         tamanho++;
     }
 
-// método para imprimir os elementos da lista
+    // método para imprimir os elementos da lista
     public void imprimir() {
         No<T> aux = inicio;
         while (aux != null) {
@@ -47,12 +46,28 @@ public class ListaDupla<T> {
 
     // método para verificar se a lista está vazia
     public boolean estaVazia() {
-            return tamanho == 0;
+        return tamanho == 0;
     }
 
     //  método para remover um nó
+    public void remover(T dado) {
+        No<T> aux = pesquisar(dado);
+        if (aux != null) {
+            if (aux.getAnterior() != null) {
+                aux.getAnterior().setProximo(aux.getProximo());
+            } else {
+                inicio = aux.getProximo();
+            }
+            if (aux.getProximo() != null) {
+                aux.getProximo().setAnterior(aux.getAnterior());
+            } else {
+                fim = aux.getAnterior();
+            }
+            aux = null;
+            tamanho--;
+        }
+    }
 
     // método para inserir um objeto em uma posição específica 
-    
 }
 
